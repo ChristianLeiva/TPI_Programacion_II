@@ -1,0 +1,7 @@
+# Ignorar carpetas de compilación y archivos de configuración de NetBeans que no se suben
+/build/
+/dist/
+/test/
+/nbproject/
+/build.xml
+/manifest.mf
