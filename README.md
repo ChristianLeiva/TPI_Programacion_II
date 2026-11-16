@@ -11,7 +11,7 @@ Lenguaje: Java 17+ Persistencia: JDBC Puro (Sin ORM / Sin Hibernate / Sin JPA) p
 ABM de Productos: Listado, Alta, Modificación y Baja Lógica conectados directamente a la base de datos con validaciones estrictas anti-negativos (precios y stocks). Pedido Interactivo: Selección dinámica de productos con control de stock en tiempo real y asignación de medio de pago al finalizar el carrito. Control Transaccional ACID (Rollback): Manejo de transacciones con setAutoCommit(false). Si ocurre un fallo parcial de stock durante el procesamiento del pedido, se evierte toda la operación automáticamente.
 
 📂 Estructura del Proyecto
-
+```text
 TPI_FoodStore/
 ├── db/
 │   └── script_creacion.sql       # Script SQL para la BD relacional (categoria y producto)
@@ -29,6 +29,7 @@ TPI_FoodStore/
 ├── Informe_Tecnico/
 |   └── Informe_Tecnico_TPI.pdf   # Documentación formal del proyecto
 └── README.md
+```
 ⚙️ Configuración y Ejecución
 
 Base de Datos: Ejecuta el script SQL ubicado en la carpeta db/ en tu servidor MySQL para crear la base de datos y sus tablas relacionales. Configura tus credenciales de acceso (usuario y contraseña) en la clase de conexión del paquete config.
