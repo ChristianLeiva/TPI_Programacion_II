@@ -72,7 +72,6 @@ public class ProductoDAO implements GenericDAO<Producto> {
     return lista;
 }
 
-    // HU-PROD-02: Listar productos filtrados por categoría (navegación Categoría -> Productos)
     public List<Producto> listarPorCategoria(Long idCategoria) throws SQLException {
         List<Producto> lista = new ArrayList<>();
         String sql = "SELECT id, nombre, precio, descripcion, stock, imagen, disponible, eliminado, created_at " +
@@ -101,7 +100,6 @@ public class ProductoDAO implements GenericDAO<Producto> {
         return lista;
     }
 
-    // HU-PROD-04: Reasignar categoría a un producto (actualiza únicamente la clave foránea)
     public boolean reasignarCategoria(Long idProducto, Long idNuevaCategoria) throws SQLException {
         String sql = "UPDATE producto SET categoria_id = ? WHERE id = ? AND eliminado = FALSE";
         
@@ -169,7 +167,6 @@ public class ProductoDAO implements GenericDAO<Producto> {
 
     @Override
     public boolean modificar(Producto producto) throws SQLException {
-        // No toca la categoria_id (para eso está reasignarCategoria)
         String sql = "UPDATE producto SET nombre = ?, precio = ?, descripcion = ?, stock = ?, imagen = ?, disponible = ? WHERE id = ? AND eliminado = FALSE";
         
         try (Connection conn = ConexionDB.obtenerConexion();
@@ -187,7 +184,7 @@ public class ProductoDAO implements GenericDAO<Producto> {
         }
     }
     
-    // Transacción para descontar stock al registrar un pedido (Punto 5.3)
+    // Transacción para descontar stock al registrar un pedido 
     public boolean descontarStockPedido(Connection conn, Long idProducto, int cantidadComprada) throws SQLException {
         String sql = "UPDATE producto SET stock = stock - ? WHERE id = ? AND stock >= ? AND disponible = TRUE AND eliminado = FALSE";
 
