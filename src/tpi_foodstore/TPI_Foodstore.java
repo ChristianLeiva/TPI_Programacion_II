@@ -42,7 +42,7 @@ public static void main(String[] args) {
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
             } else {
-                scanner.next(); // limpiar entrada invalida
+                scanner.next(); 
                 opcion = 0;
                 System.out.println("Por favor, ingresa un numero valido.");
                 continue;
@@ -178,7 +178,7 @@ public static void main(String[] args) {
                         System.out.print("Nombre del producto: ");
                         nuevoP.setNombre(scanner.nextLine());
 
-                        // Validación de Precio (no negativo)
+                        // Validación de Precio
                         double precio = -1;
                         while (precio < 0) {
                             System.out.print("Precio (debe ser mayor o igual a 0): ");
@@ -192,11 +192,11 @@ public static void main(String[] args) {
                         }
                         nuevoP.setPrecio(precio);
 
-                        scanner.nextLine(); // limpiar buffer
+                        scanner.nextLine(); 
                         System.out.print("Descripcion: ");
                         nuevoP.setDescripcion(scanner.nextLine());
 
-                        // Validación de Stock (no negativo)
+                        // Validación de Stock
                         int stock = -1;
                         while (stock < 0) {
                             System.out.print("Stock inicial (debe ser mayor o igual a 0): ");
@@ -210,7 +210,7 @@ public static void main(String[] args) {
                         }
                         nuevoP.setStock(stock);
 
-                        scanner.nextLine(); // limpiar buffer
+                        scanner.nextLine();
                         System.out.print("Imagen (nombre o ruta): ");
                         nuevoP.setImagen(scanner.nextLine());
 
@@ -239,7 +239,7 @@ public static void main(String[] args) {
                         }
 
                         Producto p = pOpt.get();
-                        scanner.nextLine(); // limpiar buffer
+                        scanner.nextLine();
                         System.out.print("Nuevo nombre (actual: " + p.getNombre() + "): ");
                         String nom = scanner.nextLine();
                         if (!nom.isEmpty()) p.setNombre(nom);
