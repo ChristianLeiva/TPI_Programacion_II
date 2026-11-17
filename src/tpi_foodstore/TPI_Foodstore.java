@@ -32,7 +32,7 @@ public static void main(String[] args) {
         do {
             System.out.println("\n--- MENU PRINCIPAL ---");
             System.out.println("1. Listar Productos desde MySQL (JDBC)");
-            System.out.println("2. Armar un Pedido Interactivo y Descontar Stock");
+            System.out.println("2. Armar un Pedido");
             System.out.println("3. Registrar Nuevo Producto (Alta)");
             System.out.println("4. Modificar Producto");
             System.out.println("5. Dar de Baja un Producto");
